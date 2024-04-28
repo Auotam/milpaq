@@ -89,36 +89,36 @@ export default function Home() {
       <ToastContainer />
 
 
-      <div id="login" class="bg--scroll login-section division">
-				<div class="container">
-					<div class="row justify-content-center">
+      <div id="login" className="bg--scroll login-section division">
+				<div className="container">
+					<div className="row justify-content-center">
 
 
 						
-						<div class="col-lg-11">
-							<div class="register-page-wrapper r-16 bg--fixed">	
-								<div class="row">
+						<div className="col-lg-11">
+							<div className="register-page-wrapper r-16 bg--fixed">	
+								<div className="row">
 
 
 									
-									<div class="col-md-6">
-										<div class="register-page-txt color--white">
+									<div className="col-md-6">
+										<div className="register-page-txt color--white">
 
 											
-											<img class="img-fluid filter-white" src="assets/images/logo-white.png" alt="logo-image" />		
+											<img className="img-fluid filter-white" src="assets/images/logo-white.png" alt="logo-image" />		
 
 											
-											<h2 class="s-42 w-700">Welcome</h2>
-											<h2 class="s-42 w-700">back to Milpaq</h2>
+											<h2 className="s-42 w-700">Welcome</h2>
+											<h2 className="s-42 w-700">back to Milpaq</h2>
 
 											
-											<p class="p-md mt-25">Integer congue sagittis and velna augue egestas magna 
+											<p className="p-md mt-25">Integer congue sagittis and velna augue egestas magna 
 											   suscipit purus aliquam
 											</p>
 
 											
-											<div class="register-page-copyright">
-												<p class="p-sm">© 2023 Milpaq. <span>All Rights Reserved</span></p>
+											<div className="register-page-copyright">
+												<p className="p-sm">© 2023 Milpaq. <span>All Rights Reserved</span></p>
 											</div>
 
 										</div>
@@ -126,56 +126,56 @@ export default function Home() {
 
 
 									
-									<div class="col-md-6">
-										<div class="register-page-form">
-											<form name="signinform" class="row sign-in-form" onSubmit={handleSubmit}>
+									<div className="col-md-6">
+										<div className="register-page-form">
+											<form name="signinform" className="row sign-in-form" onSubmit={handleSubmit}>
 
 												
-												<div class="col-md-12">
-													<a href="#" class="btn btn-google ico-left">
+												<div className="col-md-12">
+													<a href="#" className="btn btn-google ico-left">
 														<img src="assets/images/png_icons/google.png" alt="google-icon" /> Sign in with Google
 													</a>
 												</div>  
 
 												
-												<div class="col-md-12 text-center">	
-													<div class="separator-line">Or, sign in with your email</div>
+												<div className="col-md-12 text-center">	
+													<div className="separator-line">Or, sign in with your email</div>
 												</div>
 
 												
-												<div class="col-md-12">
-													<p class="p-sm input-header">Email address</p>
-													{/* <input class="form-control email" type="email" name="email" placeholder="example@example.com" />  */}
+												<div className="col-md-12">
+													<p className="p-sm input-header">Email address</p>
+													{/* <input className="form-control email" type="email" name="email" placeholder="example@example.com" />  */}
                           <input onChange={(e) => setFormData({ ...formData, email: e.target.value })} type="email" name="email" id="email" className="form-control email" placeholder="name@company.com" required />
 												</div>
 
 												
-												<div class="col-md-12">
-													<p class="p-sm input-header">Password</p>
-													<div class="wrap-input">
-														<span class="btn-show-pass ico-20"><span class="flaticon-visibility eye-pass"></span></span>
-														{/* <input class="form-control password" type="password" name="password" placeholder="* * * * * * * * *" />  */}
+												<div className="col-md-12">
+													<p className="p-sm input-header">Password</p>
+													<div className="wrap-input">
+														<span className="btn-show-pass ico-20"><span className="flaticon-visibility eye-pass"></span></span>
+														{/* <input className="form-control password" type="password" name="password" placeholder="* * * * * * * * *" />  */}
                             <input onChange={(e) => setFormData({ ...formData, password: e.target.value })} type="password" name="password" id="password" placeholder="••••••••" className="form-control password" required />
 													</div>
 												</div>
 
 												
-												<div class="col-md-12">
-													<div class="reset-password-link">
-														<p class="p-sm"><a href="reset-password.html" class="color--theme">Forgot your password?</a></p>
+												<div className="col-md-12">
+													<div className="reset-password-link">
+														<p className="p-sm"><a href="reset-password.html" className="color--theme">Forgot your password?</a></p>
 													</div>
 												</div>
 
 												
-												<div class="col-md-12">
-													<button type="submit" class="btn btn--theme hover--theme submit">Log In</button>
+												<div className="col-md-12">
+													<button type="submit" className="btn btn--theme hover--theme submit">Log In</button>
                           
 												</div> 
 
 												
-												<div class="col-md-12">
-													<p class="create-account text-center">
-														Don't have an account? <Link href="/register"> <a  class="color--theme">Sign up</a></Link>
+												<div className="col-md-12">
+													<p className="create-account text-center">
+														Don't have an account? <Link href="/register"><a  className="color--theme">Sign up</a></Link>
 													</p>
 												</div>  
 
