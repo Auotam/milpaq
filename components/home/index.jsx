@@ -30,11 +30,11 @@ const index = () => {
       <HeaderOne />
       <HeroSlider />
       <BlogSection />
-      <FoundationSection />
-      <PricingSection />
+      {/* <FoundationSection /> */}
+      {/* <PricingSection />
       <PortfolioSection />
-      <WorkSection />
-      <ServiceSection />   
+      <WorkSection /> */}
+      {/* <ServiceSection />    */}
        {/* <TestimonialSection />
       <FactSection /> */}
      

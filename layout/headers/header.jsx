@@ -73,7 +73,7 @@ const HeaderOne = () => {
 	 // Sticky Menu Area End
     return (
         <>
-<header id="header" className="tra-menu navbar-light white-scroll">
+<header id="header" className="tra-menu navbar-dark light-hero-header white-scroll">
 				<div className="header-wrapper">
 
 
@@ -108,14 +108,14 @@ const HeaderOne = () => {
 	        					<ul className="wsmenu-list nav-theme">
 
 
-								<li aria-haspopup="true"><span className="wsmenu-click"><i className="wsmenu-arrow"></i></span><a href="/" className="h-link">Home <span className="wsarrow"></span></a>
+								<li aria-haspopup="true"><span className="wsmenu-click"><i className="wsmenu-arrow"></i></span><a href="/" className="h-link">Home </a>
 	            						
 										</li>
 
-										<li className="nl-simple" aria-haspopup="true"><a href="#features-11" className="h-link">Features</a></li>
+										<li className="nl-simple" aria-haspopup="true"><a href="/" className="h-link">Features</a></li>
 
 
-						          	<li aria-haspopup="true"><span className="wsmenu-click"><i className="wsmenu-arrow"></i></span><a href="/about" className="h-link">About <span className="wsarrow"></span></a>
+						          	<li aria-haspopup="true"><span className="wsmenu-click"><i className="wsmenu-arrow"></i></span><a href="/" className="h-link">About</a>
 	            						
 								    </li>
 
@@ -128,7 +128,7 @@ const HeaderOne = () => {
 								    
 
 						          	
-							    	<li className="nl-simple" aria-haspopup="true"><a href="/help-center" className="h-link">Help Center</a></li>
+							    	<li className="nl-simple" aria-haspopup="true"><a href="/" className="h-link">Help Center</a></li>
 
 
 									{userData ? (
@@ -136,8 +136,10 @@ const HeaderOne = () => {
 											
 											<li aria-haspopup="true"><span className="wsmenu-click"><i className="wsmenu-arrow"></i></span><a href="#" className="h-link">User <span className="wsarrow"></span></a>
 											<ul className="sub-menu">
-												<li aria-haspopup="true"><a href="#lnk-1"><span>Welcome, {userData.user.email}</span></a></li>
-												<li aria-haspopup="true"><a href="#features-2"><span>{userData.name}</span></a></li>
+												<span className='text-left'>Welcome, {userData.user.name}</span>
+												{/* <li aria-haspopup="true"><a href="#lnk-1"><span>{userData.user.email}</span></a></li> */}
+												
+												<li aria-haspopup="true"><a href="/mydashboard"><span>{userData.name}</span>My Dashboard</a></li>
 												<button className='nl-simple reg-fst-link mobile-last-link' onClick={logout}>Logout </button>
 											   </ul>
 										</li>
@@ -150,7 +152,7 @@ const HeaderOne = () => {
 
 			
 			<li className="nl-simple" aria-haspopup="true">
-				<a href="/signup" className="btn r-04 btn--theme hover--tra-white last-link">Sign up</a>
+				<a href="/register" class="btn r-04 btn--theme hover--tra-white">Sign up</a>
 			</li> </> }
 							    	
 							    

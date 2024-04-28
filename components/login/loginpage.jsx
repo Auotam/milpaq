@@ -29,7 +29,7 @@ const LoginPage = () => {
 
                                         
                                         <h2 className="s-42 w-700">Welcome</h2>
-                                        <h2 className="s-42 w-700">back to OnDemand</h2>
+                                        <h2 className="s-42 w-700">back to milpaq</h2>
 
                                         
                                         <p className="p-md mt-25">Integer congue sagittis and velna augue egestas magna 
@@ -38,7 +38,7 @@ const LoginPage = () => {
 
                                         
                                         <div className="register-page-copyright">
-                                            <p className="p-sm">&copy; 2023 OnDemand. <span>All Rights Reserved</span></p>
+                                            <p className="p-sm">&copy; 2023 Milpaq. <span>All Rights Reserved</span></p>
                                         </div>
 
                                     </div>

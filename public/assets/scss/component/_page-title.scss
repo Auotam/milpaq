@@ -95,22 +95,3 @@
 		gap: 20px;
 	}
 }
-.breadcrumb-wrapper {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	padding: 27px 0;
-	&::before {
-		position: absolute;
-		content: "";
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		width: 100%;
-		width: 100%;
-		background: rgb(11, 61, 44);
-		opacity: 0.9;
-	}
-}

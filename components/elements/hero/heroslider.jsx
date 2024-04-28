@@ -33,43 +33,45 @@ const HeroSlider = () => {
 
     return (
 
-        <section id="hero-1" className="bg--scroll hero-section">
-				<div className="container">	
-					<div className="row d-flex align-items-center">
 
+     <section id="hero-21" className="hero-section">
+    <div className="container text-center">
+        <div className="row justify-content-center">
+            <div className="col-md-10 col-lg-9">
+                <div className="hero-21-txt wow fadeInUp" >
+                    <h2 className="s-56 w-700">Streamlining Military Packaging Compliance</h2>
+                    <h6 className='mb-4'></h6>
+                    <div className="btns-group">
+                        <a href="#banner-13" className="btn r-04 btn--theme hover--theme">Get started for free</a>
+                        <a href="#features-5" className="btn r-04 btn--tra-black hover--theme">How it works</a>
+                    </div>
+                    <ul class="advantages ico-15 mt-15 clearfix">
+									<li><p class="p-sm">No credit card required</p></li>
+									<li class="advantages-links-divider"><p><span class="flaticon-minus"></span></p></li>
+									<li><p class="p-sm">Free 30 days trial</p></li>
+								</ul>
+                </div>
+            </div>
+        </div>
+        <div className="hero-21-wrapper r-34">
+            <div className="hero-overlay bg--fixed">
+                <div className="row">
+                    <div className="col">
+                        <div className="hero-21-img video-preview wow fadeInUp" >
+                            <a className="video-popup1" href="javascript:">
+                                <div className="video-btn video-btn-xl bg--theme">
+                                    <div className="video-block-wrapper"><span className="flaticon-play-button"></span></div>
+                                </div>
+                            </a>
+                            <img className="img-fluid" src="assets/images/tablet-01.png" alt="video-preview" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-	
-						<div className="col-md-6">
-							<div className="hero-1-txt color--white wow fadeInRight">
-
-								
-								<h2 className="s-58 w-700">Streamlining Military Packaging: Simplify, Comply, Succeed!</h2>
-
-		
-								{/* <p className="p-xl">Mauris donec turpis suscipit sapien ociis sagittis sapien tempor a volute 
-									ligula and aliquet tortor
-								</p> */}
-
-					
-								<a href="#banner-3" className="btn r-04 btn--theme hover--tra-white">Get started for free</a>
-								<p className="p-sm btn-txt ico-15">
-									<span className="flaticon-check"></span> No credit card needed, free 14-day trial
-								</p>
-
-							</div>
-						</div>	
-
-
-						<div className="col-md-6">	
-							<div className="hero-1-img wow fadeInLeft">	
-								<img className="img-fluid" src="/assets/images/hero-1-img.png" alt="hero-image" />					
-							</div>
-						</div>	
-						
-
-					</div>    
-				</div>	
-			</section>	
 
        
     )

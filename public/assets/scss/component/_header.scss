@@ -154,11 +154,11 @@
   margin-right: 1px;
 }
 
-.tra-menu .wsmenu > .wsmenu-list > li > a,
-.aqua-menu .wsmenu > .wsmenu-list > li > a,
-.blue-menu .wsmenu > .wsmenu-list > li > a {
-  color: #02045f !important;
-}
+// .tra-menu .wsmenu > .wsmenu-list > li > a,
+// .aqua-menu .wsmenu > .wsmenu-list > li > a,
+// .blue-menu .wsmenu > .wsmenu-list > li > a {
+//   color: #7e5edd !important;
+// }
 
 .white-menu .wsmenu > .wsmenu-list > li > a {
   color: #444;
@@ -3565,7 +3565,7 @@ body.wsactive {
   }
   
   .nav-blue-500 .sm-info { background-color: #185abd; }
-  .nav-blue-400 .sm-info { background-color: #1680fb; }
+  .nav-blue-400 .sm-info { background-color: #7e5edd; }
   .nav-blue-300 .sm-info { background-color: #3eb1ff; }
   
   .nav-green-500 .sm-info { background-color: #00a14e; }
@@ -3918,7 +3918,7 @@ body.wsactive {
   .wsmenu > .wsmenu-list.nav-blue-400 > li > ul.sub-menu > li > a:hover,
   .wsmenu > .wsmenu-list.nav-blue-400 > li > .wsmegamenu.w-75 ul.link-list > li > a:hover,
   .wsmenu > .wsmenu-list.nav-blue-400 > li > .wsmegamenu.halfmenu ul.link-list > li > a:hover {
-    color: #1680fb!important;
+    color: #7e5edd!important;
   }
   
   .wsmenu > .wsmenu-list.nav-blue-300 > li > ul.sub-menu > li > a:hover,

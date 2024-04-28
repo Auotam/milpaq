@@ -119,7 +119,7 @@ const FooterOne = () => {
                     
                     <div className="col">
                         <div className="footer-copyright">
-                            <p className="p-sm">&copy; 2023 OnDemand. <span>All Rights Reserved</span></p>
+                            <p className="p-sm">&copy; 2023 Milpaq. <span>All Rights Reserved</span></p>
                         </div>
                     </div>
 

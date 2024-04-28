@@ -1,59 +1,60 @@
 import Link from 'next/link';
 import React from 'react';
 import blogItemsList from '../../data/blogs';
+import "../../public/assets/images/tablet-01.png"
 
 const BlogSection = () => {
     return (
         <>
        
-<section id="features-2" class="py-100 features-section division">
-    <div class="container">
+<section id="features-2" className="py-100 features-section division">
+    <div className="container">
 
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-9">
-                <div class="section-title mb-80">
-                    <h2 class="s-50 w-700">The Complete Solutions</h2>
-                    <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p>
+        <div className="row justify-content-center">
+            <div className="col-md-10 col-lg-9">
+                <div className="section-title mb-80">
+                    <h2 className="s-50 w-700">The Complete Solutions</h2>
+                    <p className="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p>
                 </div>
             </div>
         </div>
 
-        <div class="fbox-wrapper text-center">
-            <div class="row row-cols-1 row-cols-md-3">
-                <div class="col">
-                    <div class="fbox-2 fb-1 wow fadeInUp">
-                        <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid light-theme-img" src="/assets/images/f_01.png" alt="feature-image" />
-                            <img class="img-fluid dark-theme-img" src="/assets/images/f_01_dark.png" alt="feature-image" />
+        <div className="fbox-wrapper text-center">
+            <div className="row row-cols-1 row-cols-md-3">
+                <div className="col">
+                    <div className="fbox-2 fb-1 wow fadeInUp">
+                        <div className="fbox-img gr--whitesmoke h-175">
+                            <img className="img-fluid light-theme-img" src="/assets/images/f_01.png" alt="feature-image" />
+                            <img className="img-fluid dark-theme-img" src="/assets/images/f_01_dark.png" alt="feature-image" />
                         </div>
-                        <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Code Interpretation</h6>
+                        <div className="fbox-txt">
+                            <h6 className="s-22 w-700">Code Interpretation</h6>
                             <p>MILPAQ quickly deciphers complex MIL-STD-2073 packaging codes, providing clear instructions on material requirements and packaging procedures.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="fbox-2 fb-2 wow fadeInUp">
-                        <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid light-theme-img" src="/assets/images/f_05.png" alt="feature-image" />
-                            <img class="img-fluid dark-theme-img" src="/assets/images/f_05_dark.png" alt="feature-image" />
+                <div className="col">
+                    <div className="fbox-2 fb-2 wow fadeInUp">
+                        <div className="fbox-img gr--whitesmoke h-175">
+                            <img className="img-fluid light-theme-img" src="/assets/images/f_05.png" alt="feature-image" />
+                            <img className="img-fluid dark-theme-img" src="/assets/images/f_05_dark.png" alt="feature-image" />
                         </div>
-                        <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Interactive Guidance</h6>
+                        <div className="fbox-txt">
+                            <h6 className="s-22 w-700">Interactive Guidance</h6>
                             <p>Step-by-step interactive guidance ensures nothing is overlooked in the packaging process, including the correct placement of MIL-STD-129 Labels, guaranteeing compliance with ease.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="fbox-2 fb-3 wow fadeInUp">
-                        <div class="fbox-img gr--whitesmoke h-175">
-                            <img class="img-fluid light-theme-img" src="/assets/images/f_02.png" alt="feature-image" />
-                            <img class="img-fluid dark-theme-img" src="/assets/images/f_02_dark.png" alt="feature-image" />
+                <div className="col">
+                    <div className="fbox-2 fb-3 wow fadeInUp">
+                        <div className="fbox-img gr--whitesmoke h-175">
+                            <img className="img-fluid light-theme-img" src="/assets/images/f_02.png" alt="feature-image" />
+                            <img className="img-fluid dark-theme-img" src="/assets/images/f_02_dark.png" alt="feature-image" />
                         </div>
-                        <div class="fbox-txt">
-                            <h6 class="s-22 w-700">Convenient Material Procurement</h6>
+                        <div className="fbox-txt">
+                            <h6 className="s-22 w-700">Convenient Material Procurement</h6>
                             <p>MILPAQ offers links to purchase required materials directly, streamlining the packaging process and ensuring convenience for users.
 </p>
                         </div>
@@ -66,92 +67,94 @@ const BlogSection = () => {
     </div>
 </section>
 
-<hr class="divider" />
+<hr className="divider" />
 
-<section class="pt-100 ct-01 content-section division">
-    <div class="container">
-        <div class="row d-flex align-items-center">
-            <div class="col-md-6 order-last order-md-2">
-                <div class="txt-block left-column wow fadeInRight">
-                    <span class="section-id">Productivity Focused</span>
-                    <h2 class="s-46 w-700">Achieve more with better workflows</h2>
-                    <p>Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque auctor turpis
-                        vitae dolor luctus placerat magna and ligula cursus purus vitae purus an ipsum suscipit
-                    </p>
-                    <div class="cbox-1 ico-15">
-                        <div class="ico-wrap color--theme">
-                            <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                        </div>
-                        <div class="cbox-1-txt">
-                            <p>Magna dolor luctus at egestas sapien</p>
-                        </div>
-                    </div>
-                    <div class="cbox-1 ico-15">
-                        <div class="ico-wrap color--theme">
-                            <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                        </div>
-                        <div class="cbox-1-txt">
-                            <p>Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien
-                                turpis ultrice auctor congue varius magnis
-                            </p>
-                        </div>
-                    </div>
-                    <div class="cbox-1 ico-15">
-                        <div class="ico-wrap color--theme">
-                            <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                        </div>
-                        <div class="cbox-1-txt">
-                            <p class="mb-0">Volute turpis dolores and sagittis congue</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 order-first order-md-2">
-                <div class="img-block right-column wow fadeInLeft">
-                    <img class="img-fluid" src="/assets/images/img-13.png" alt="content-image" />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<section className="pt-100 ct-04 content-section division">
+				<div className="container">
 
-<section class="pt-100 ct-08 content-section division">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-9">
-                <div class="section-title mb-70">
-                    <h2 class="s-50 w-700">Discover insights across all your data with OnDemand</h2>
-                    <p class="s-21">Ligula risus auctor tempus magna feugiat lacinia.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="img-block wow fadeInUp">
-                    <img class="img-fluid" src="/assets/images/img-19.png" alt="video-preview" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="img-block-btn text-center wow fadeInUp">
-                    <a href="#integrations-2" class="btn r-04 btn--tra-black hover--theme">Monitor your activity</a>
-                    <ul class="advantages ico-15 clearfix">
-                        <li><p>Free 14 days trial</p></li>
-                        <li class="advantages-links-divider"><p><span class="flaticon-minus"></span></p></li>
-                        <li><p>Exclusive Support</p></li>
-                        <li class="advantages-links-divider"><p><span class="flaticon-minus"></span></p></li>
-									<li><p>No Fees</p></li>
-								</ul>
-
-							</div>
-						</div>
-					</div>
 
 					
-				</div>	  
-			</section>	
+					<div className="row d-flex align-items-center">
 
+
+						
+			 			<div className="col-md-6 order-last order-md-2">
+			 				<div className="txt-block left-column wow fadeInRight">
+
+
+			 					
+								<div className="cbox-2 process-step">
+									
+									
+									<div className="ico-wrap">
+										<div className="cbox-2-ico bg--theme color--white">1</div>
+										<span className="cbox-2-line"></span>
+									</div>
+	
+									
+									<div className="cbox-2-txt">
+										<h5 className="s-22 w-700">Sign Up</h5>
+										<p>Users can easily create an account by clicking on the "Sign Up" button on the website. They have the option to sign up using their Google account for quick access or with their email address and password for added security.
+										</p>
+									</div>
+
+								</div>
+
+
+								
+								<div className="cbox-2 process-step">
+									
+									
+									<div className="ico-wrap">
+										<div className="cbox-2-ico bg--theme color--white">2</div>
+										<span className="cbox-2-line"></span>
+									</div>
+	
+									
+									<div className="cbox-2-txt">
+										<h5 className="s-22 w-700">Access Dashboard</h5>
+										<p>Once signed up, users are directed to their personalized dashboard. Here, they can enter the packaging codes into the designated field to initiate the process of obtaining packaging information.
+										</p>
+									</div>
+
+								</div>	
+
+
+								
+								<div className="cbox-2 process-step">
+									
+									
+									<div className="ico-wrap">
+										<div className="cbox-2-ico bg--theme color--white">3</div>
+									</div>
+	
+									
+									<div className="cbox-2-txt">
+										<h5 className="s-22 w-700">Enter Packaging Codes</h5>
+										<p className="mb-0">In the dashboard, users simply enter the packaging codes they need information for. MILPAQ swiftly processes the data and presents users with a breakdown of packaging requirements, including materials needed and step-by-step guidance for packaging procedures.
+										</p>
+									</div>
+									
+								</div>	
+
+
+			 				</div>
+					 	</div>	
+
+
+						
+						<div className="col-md-6 order-first order-md-2">
+							<div className="img-block wow fadeInLeft" >
+								<img className="img-fluid" src="/assets/images/tablet-01.png" alt="content-image" />
+							</div>	
+						</div>
+
+
+					</div>
+
+
+				</div>	   
+			</section>
         </>
     );
 };
