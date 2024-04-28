@@ -175,7 +175,7 @@ export default function Home() {
 												
 												<div class="col-md-12">
 													<p class="create-account text-center">
-														Don't have an account? <a href="signup-2.html" class="color--theme">Sign up</a>
+														Don't have an account? <Link href="/register"> <a  class="color--theme">Sign up</a></Link>
 													</p>
 												</div>  
 
