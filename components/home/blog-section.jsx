@@ -13,8 +13,9 @@ const BlogSection = () => {
         <div className="row justify-content-center">
             <div className="col-md-10 col-lg-9">
                 <div className="section-title mb-80">
-                    <h2 className="s-50 w-700">The Complete Solutions</h2>
-                    <p className="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p>
+                    <h2 className="s-50 w-700">Your All-in-One Packaging Partner</h2>
+                    <p className="s-21 color--grey">Your go-to solution for military packaging perfection.
+.</p>
                 </div>
             </div>
         </div>

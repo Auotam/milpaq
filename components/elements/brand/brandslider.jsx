@@ -15,7 +15,7 @@ const BrandSlider = ({brand_classA}) => {
             <div class="col-md-10 col-lg-9">
                 <div class="section-title mb-70">	
                     <h2 class="s-50 w-700">Questions & Answers</h2>	
-                    <p class="s-21 color--grey">Ligula risus auctor tempus magna feugiat lacinia.</p>
+                    <p class="s-21 color--grey">Quick solutions for your MILPAQ queries.</p>
                 </div>	
             </div>
         </div>

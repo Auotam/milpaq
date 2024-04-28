@@ -46,9 +46,7 @@ const HeroSlider = () => {
                         <a href="#features-5" className="btn r-04 btn--tra-black hover--theme">How it works</a>
                     </div>
                     <ul class="advantages ico-15 mt-15 clearfix">
-									<li><p class="p-sm">No credit card required</p></li>
-									<li class="advantages-links-divider"><p><span class="flaticon-minus"></span></p></li>
-									<li><p class="p-sm">Free 30 days trial</p></li>
+									<li><p class="p-sm">Free to use, no credit card required.</p></li>
 								</ul>
                 </div>
             </div>
