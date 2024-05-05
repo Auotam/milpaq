@@ -8,7 +8,7 @@ const Modal = ({ onClose, data }) => {
       <div className="modal sidenavR">
         <div className="modal-header">
           
-          <button className='btn-success btn' onClick={onClose}>Close</button>
+          <button className='status-btn close-btn' onClick={onClose}>Close</button>
         </div>
         <div className="modal-body">
           <table className="table">

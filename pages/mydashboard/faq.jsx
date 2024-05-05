@@ -7,6 +7,7 @@ import Wrapper from '@/layout/wrapper';
 import SEO from '@/components/seo';
 import DashboardMain from '@/components/dashboard';
 import AccountPage from '@/components/dashboard/account/accountPage';
+import Ifaq from '@/components/dashboard/faq/ifaq';
 
 
 const Dashboard = () => {
@@ -20,6 +21,8 @@ const Dashboard = () => {
     <Wrapper>
     <SEO pageTitle={'About'} />
     <Layout>
+
+    <Ifaq />
       
     
   </Layout>
