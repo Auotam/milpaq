@@ -1,55 +1,58 @@
-// ** React Imports
+
 import { useState, useEffect } from 'react'
-
-// ** MUI Imports
-
-import TextField from '@mui/material/TextField'
-
-import Autocomplete from '@mui/material/Autocomplete';
-
-
-
-
-const path = require('path');
-
-
-const Wrapping = () => {
-
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+const path = require("path");
+const Wrapping = ({ setData }) => {
   const [movieOptions, setMovieOptions] = useState([]);
-  
-
-
 
   
-  // ** State
-  const [openAlert, setOpenAlert] = useState(true)
-  const [imgSrc, setImgSrc] = useState('/images/avatars/1.png')
+  const handleGetData = () => {
+    
+    const newData = 'Data from MidSart component';
+    
+    setData(newData);
+  };
 
-  const onChange = file => {
-    const reader = new FileReader()
-    const { files } = file.target
+  const handleOptionSelected = (option) => {
+    
+    setData(option);
+  };
+
+  
+  const [openAlert, setOpenAlert] = useState(true);
+  const [imgSrc, setImgSrc] = useState("/images/avatars/1.png");
+
+  const onChange = (file) => {
+    const reader = new FileReader();
+    const { files } = file.target;
     if (files && files.length !== 0) {
-      reader.onload = () => setImgSrc(reader.result)
-      reader.readAsDataURL(files[0])
+      reader.onload = () => setImgSrc(reader.result);
+      reader.readAsDataURL(files[0]);
     }
-  }
+  };
 
   return (
-    <div className='col-md-4 col-lg-4 col-sm-12 -mb-4'>
-
-    <Autocomplete fullWidth
-    disablePortal
-    id="combo-box-demo"
-    options={top100Films} // Pass the array of options here
-    getOptionLabel={(option) => option.description} // Get the description field from each option object
-    
-    renderInput={(params) => <TextField {...params} label="Wrapping Materials" />}
-  />
+    <div className='col-md-4 col-lg-4 col-sm-12 mb-4'>
+    <Autocomplete
+      fullWidth
+      disablePortal
+      id="combo-box-demo"
+      options={top100Films}
+      getOptionLabel={(option) => `${option.code} - ${option.description}`}
+      renderInput={(params) => <TextField {...params} label="Wrapping Materials" />}
+      filterOptions={(options, state) => {
+        if (!state.inputValue) return options;
+        return options.filter(option => option.code.toLowerCase().includes(state.inputValue.toLowerCase()));
+      }}
+      onChange={(event, value) => handleOptionSelected(value)} 
+    />
   </div>
-  )
-}
+  );
+};
 
 export default Wrapping;
+
 
 const top100Films = [
   {

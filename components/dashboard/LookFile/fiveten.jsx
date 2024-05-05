@@ -1,272 +1,253 @@
-// ** React Imports
 import { useState, useEffect } from 'react'
-
-// ** MUI Imports
-
-import TextField from '@mui/material/TextField'
-
-import Autocomplete from '@mui/material/Autocomplete';
-
-
-
-
-const path = require('path');
-
-
-const Smc = () => {
-
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+const path = require("path");
+const Unit = ({ setData }) => {
   const [movieOptions, setMovieOptions] = useState([]);
-  
-
-
 
   
-  // ** State
-  const [openAlert, setOpenAlert] = useState(true)
-  const [imgSrc, setImgSrc] = useState('/images/avatars/1.png')
+  const handleGetData = () => {
+    
+    const newData = 'Data from MidSart component';
+    
+    setData(newData);
+  };
 
-  const onChange = file => {
-    const reader = new FileReader()
-    const { files } = file.target
+  const handleOptionSelected = (option) => {
+    setData(option);
+  };
+
+  
+  const [openAlert, setOpenAlert] = useState(true);
+  const [imgSrc, setImgSrc] = useState("/images/avatars/1.png");
+
+  const onChange = (file) => {
+    const reader = new FileReader();
+    const { files } = file.target;
     if (files && files.length !== 0) {
-      reader.onload = () => setImgSrc(reader.result)
-      reader.readAsDataURL(files[0])
+      reader.onload = () => setImgSrc(reader.result);
+      reader.readAsDataURL(files[0]);
     }
-  }
+  };
 
   return (
-<div className='col-md-4 col-lg-4 col-sm-12 mb-4'>
-    <Autocomplete fullWidth
-    disablePortal
-    id="combo-box-demo"
-    options={top100Films} // Pass the array of options here
-    getOptionLabel={(option) => option.description} // Get the description field from each option object
-    
-    renderInput={(params) => <TextField {...params} label="Special Material Content" />}
-  />
+    <div className='col-md-4 col-lg-4 col-sm-12 mb-4'>
+    <Autocomplete
+      fullWidth
+      disablePortal
+      id="combo-box-demo"
+      options={top100Films}
+      getOptionLabel={(option) => `${option.code} - ${option.description}`}
+      renderInput={(params) => <TextField {...params} label="Special Material Content"/>}
+      filterOptions={(options, state) => {
+        if (!state.inputValue) return options;
+        return options.filter(option => option.code.toLowerCase().includes(state.inputValue.toLowerCase()));
+      }}
+      onChange={(event, value) => handleOptionSelected(value)} 
+    />
   </div>
-  )
-}
+  );
+};
 
-export default Smc;
+export default Unit;
 
 const top100Films = [
   {
-    "code": "00",
-    "description": "No requirement."
+    "code": "A",
+    "SMCC Image": "",
+    "description": "Medical",
   },
   {
-    "code": "AA",
-    "description": "MIL-STD-2073-1B/2C Code: Material used shall be in accordance with the requirements of MIL-P-116."
+    "code": "B",
+    "SMCC Image": "",
+    "description": "Lithium battery, large form",
   },
   {
-    "code": "AB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-B-131, type II, barrier, watervaporproof, flexible, heat-sealable, flame resistant."
+    "code": "C",
+    "SMCC Image": "",
+    "description": "Corrosive Solids/Corrosive Liquids (other than acid)",
   },
   {
-    "code": "BA",
-    "description": "QQ-A-1876, aluminum foil"
+    "code": "D",
+    "SMCC Image": "",
+    "description":
+      "Alcohol (ethanol, ethyl alcohol, or grain alcohol only). Storage and custody requirements for medical supplies are provided in NAVMED P-117, Manual of the Medical Department.",
   },
   {
-    "code": "CA",
-    "description": "A-A-203, kraft wrapping paper."
+    "code": "E",
+    "SMCC Image": "",
+    "description": "Lithium battery",
   },
   {
-    "code": "CB",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type I, grade B, 30 lb. basis weight."
+    "code": "F",
+    "SMCC Image": "",
+    "description":
+      "Flammable Liquid, flash point not more than 60 degrees C (140 degrees F)",
   },
   {
-    "code": "CC",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type I, grade B, 40 lb. basis weight."
+    "code": "G",
+    "SMCC Image": "",
+    "description":
+      "Combustible Liquid, flash point 60 degrees C (140 degrees F) to 93 degrees C (200 degrees F)",
   },
   {
-    "code": "CD",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type I, grade B, 60 lb. basis weight."
+    "code": "H",
+    "SMCC Image": "",
+    "description": "Item that is hazardous under typical use or handling",
   },
   {
-    "code": "CE",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type II, grade C, 60 lb. basis weight, fire retardant."
+    "code": "I",
+    "SMCC Image": "",
+    "description":
+      "Aerosols. A non-refillable receptacle containing a compressed, liquefied or dissolved gas under pressure, with a self-closing release device. Consult MSDS and Label precautions",
   },
   {
-    "code": "CF",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type II, grade D, 55 lb. basis weight, fire retardant."
+    "code": "J",
+    "SMCC Image": "",
+    "description": "Oxidizing Material",
   },
   {
-    "code": "DA",
-    "description": "A-A-1249, paper, tissue."
+    "code": "K",
+    "SMCC Image": "",
+    "description": "Organic Peroxides",
   },
   {
-    "code": "DB",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-553, paper, wrapping, tissue, type I."
+    "code": "L",
+    "SMCC Image": "",
+    "description": "Radioactive material",
   },
   {
-    "code": "DC",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-553, paper, wrapping, tissue, type II."
+    "code": "M",
+    "SMCC Image": "",
+    "description": "Magnetic",
   },
   {
-    "code": "EA",
-    "description": "MIL-DTL-17667, neutral wrapping paper."
+    "code": "N",
+    "SMCC Image": "",
+    "description":
+      "Asbestos (item capable of emitting asbestos dust/fibers)",
   },
   {
-    "code": "EB",
-    "description": "MIL-DTL-17667, Type I, neutral wrapping paper, flat."
+    "code": "O",
+    "SMCC Image": "",
+    "description":
+      "Off-Gassing considerations/atmospheric controlled item for submarines",
   },
   {
-    "code": "EC",
-    "description": "MIL-DTL-17667, Type II, neutral wrapping paper, creped."
+    "code": "P",
+    "SMCC Image": "",
+    "description":
+      "Poison (including Methanol, Wood Alcohol, Denatured Alcohol). Storage & Custody requirements for medical items are found in NAVMED P-117, Manual of the Medical Department.",
   },
   {
-    "code": "ED",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-P-17667, chemically neutral wrapping paper, type II, class 2."
+    "code": "Q",
+    "SMCC Image": "",
+    "description": "Explosive Non-Ordnance Items",
   },
   {
-    "code": "FA",
-    "description": "MIL-P-130, laminated and creped wrapping paper."
+    "code": "R",
+    "SMCC Image": "",
+    "description": "Radioactive Material",
   },
   {
-    "code": "FB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-P-130, laminated and creped wrapping paper, type I, 150 lb basis wt."
+    "code": "S",
+    "SMCC Image": "",
+    "description": "Oils/Petroleum Products (Not otherwise specified)",
   },
   {
-    "code": "FC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-P-130, laminated and creped wrapping paper, type II, 125 lb basis wt."
+    "code": "T",
+    "SMCC Image": "",
+    "description":
+      "Toxic substance. Storage and custody requirements for medical supplies are provided in NAVMED P-117, Manual of the Medical Department.",
   },
   {
-    "code": "FD",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-P-130, laminated and creped wrapping paper, type III, 100 lb basis wt."
+    "code": "U",
+    "SMCC Image": "",
+    "description":
+      "Mercury (items containing Mercury). Follow established Mercury Control and Abatement programs.",
   },
   {
-    "code": "GA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-B-121, greaseproof, waterproof barrier."
+    "code": "V",
+    "SMCC Image": "",
+    "description": "Acid",
   },
   {
-    "code": "GB",
-    "description": "MIL-PRF-121, greaseproof, waterproof barrier."
+    "code": "W",
+    "SMCC Image": "",
+    "description": "Non-Flammable Compressed Gas",
   },
   {
-    "code": "GC",
-    "description": "MIL-PRF-121, Type I, medium duty, greaseproof, waterproof barrier."
+    "code": "X",
+    "SMCC Image": "",
+    "description": "Radioactive and Magnetic Material",
   },
   {
-    "code": "GD",
-    "description": "MIL-PRF-121, Type II, heavy duty, greaseproof, waterproof barrier."
+    "code": "Y",
+    "SMCC Image": "",
+    "description": "Magnetically sensitive",
   },
   {
-    "code": "GE",
-    "description": "MIL-PRF-121, Type III, extra heavy duty, greaseproof, waterproof barrier."
+    "code": "Z",
+    "SMCC Image": "",
+    "description": "Flammable Solids",
   },
   {
-    "code": "HA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding."
+    "code": "0",
+    "SMCC Image": "",
+    "description": "(Reserved)",
   },
   {
-    "code": "HB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type I."
+    "code": "1",
+    "SMCC Image": "",
+    "description":
+      "Item that has a hazardous component and is regulated for transportation",
   },
   {
-    "code": "HC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type II."
+    "code": "2",
+    "SMCC Image": "",
+    "description":
+      "Electrostatic discharge (ESD)/electromagnetic (EM) sensitive Item",
   },
   {
-    "code": "HD",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type III."
+    "code": "3",
+    "SMCC Image": "",
+    "description": "Electrostatic discharge sensitive (ESDS) Item",
   },
   {
-    "code": "HE",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type IV."
+    "code": "4",
+    "SMCC Image": "",
+    "description":
+      "Item or part that contains hazardous material(s) and could require special handling during maintenance or disposal operations",
   },
   {
-    "code": "HF",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type V."
+    "code": "5",
+    "SMCC Image": "",
+    "description":
+      "Hazardous Material (non-specific), item's unique formulations may produce different hazard classes. Consult item's Material Safety Data Sheet (MSDS) or container warning label.",
   },
   {
-    "code": "IA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 20 lb basis wt."
+    "code": "6",
+    "SMCC Image": "",
+    "description": "Military munitions",
   },
   {
-    "code": "IB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 30 lb basis wt."
+    "code": "7",
+    "SMCC Image": "",
+    "description": "Dangerous When Wet material",
   },
   {
-    "code": "IC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 40 lb basis wt."
+    "code": "8",
+    "SMCC Image": "",
+    "description": "Spontaneously Combustible Material",
   },
   {
-    "code": "ID",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 50 lb basis wt."
+    "code": "9",
+    "SMCC Image": "",
+    "description": "Non-hazardous or non-sensitive",
   },
   {
-    "code": "IE",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 60 lb basis wt."
+    "code": "",
+    "SMCC Image": "",
+    "description": "Item not evaluated",
   },
-  {
-    "code": "IF",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 70 lb basis wt."
-  },
-  {
-    "code": "IG",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 80 lb basis wt."
-  },
-  {
-    "code": "IH",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 90 lb basis wt."
-  },
-  {
-    "code": "II",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 100 lb basis wt."
-  },
-  {
-    "code": "JA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 30 lb basis wt."
-  },
-  {
-    "code": "JB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 40 lb basis wt."
-  },
-  {
-    "code": "JC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 50 lb basis wt."
-  },
-  {
-    "code": "JD",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 60 lb basis wt."
-  },
-  {
-    "code": "JE",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 70 lb basis wt."
-  },
-  {
-    "code": "JF",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 80 lb basis wt."
-  },
-  {
-    "code": "JG",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 90 lb basis wt."
-  },
-  {
-    "code": "JH",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 100 lb basis wt."
-  },
-  {
-    "code": "KA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam."
-  },
-  {
-    "code": "KB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam, urethane, open cell, MIL-P-26514, type I."
-  },
-  {
-    "code": "KC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam, urethane, open cell, MIL-P-26514, type II."
-  },
-  {
-    "code": "KD",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam, urethane, open cell, MIL-P-26514, type III."
-  },
-  {
-    "code": "KE",
-   "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam, urethane, open cell, MIL-P-26514, type IV."
-  }
-  ]
-
-
+];

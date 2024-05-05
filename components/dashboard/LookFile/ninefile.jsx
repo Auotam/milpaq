@@ -1,272 +1,184 @@
-// ** React Imports
+
 import { useState, useEffect } from 'react'
-
-// ** MUI Imports
-
-import TextField from '@mui/material/TextField'
-
-import Autocomplete from '@mui/material/Autocomplete';
-
-
-
-
-const path = require('path');
-
-
-const PackingCode = () => {
-
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+const path = require("path");
+const PackingCode = ({ setData }) => {
   const [movieOptions, setMovieOptions] = useState([]);
-  
-
-
 
   
-  // ** State
-  const [openAlert, setOpenAlert] = useState(true)
-  const [imgSrc, setImgSrc] = useState('/images/avatars/1.png')
+  const handleGetData = () => {
+    
+    const newData = 'Data from MidSart component';
+    
+    setData(newData);
+  };
 
-  const onChange = file => {
-    const reader = new FileReader()
-    const { files } = file.target
+  const handleOptionSelected = (option) => {
+    
+    setData(option);
+  };
+
+  
+  const [openAlert, setOpenAlert] = useState(true);
+  const [imgSrc, setImgSrc] = useState("/images/avatars/1.png");
+
+  const onChange = (file) => {
+    const reader = new FileReader();
+    const { files } = file.target;
     if (files && files.length !== 0) {
-      reader.onload = () => setImgSrc(reader.result)
-      reader.readAsDataURL(files[0])
+      reader.onload = () => setImgSrc(reader.result);
+      reader.readAsDataURL(files[0]);
     }
-  }
+  };
 
   return (
-<div className='col-md-4 col-lg-4 col-sm-12 -mb-4'>
-    <Autocomplete fullWidth
-    disablePortal
-    id="combo-box-demo"
-    options={top100Films} // Pass the array of options here
-    getOptionLabel={(option) => option.description} // Get the description field from each option object
-
-    renderInput={(params) => <TextField {...params} label="	Packing Code" />}
-  />
+    <div className='col-md-4 col-lg-4 col-sm-12 mb-4'>
+    <Autocomplete
+      fullWidth
+      disablePortal
+      id="combo-box-demo"
+      options={top100Films}
+      getOptionLabel={(option) => `${option.code} - ${option.description}`}
+      renderInput={(params) => <TextField {...params} label="Packaging Code" />}
+      filterOptions={(options, state) => {
+        if (!state.inputValue) return options;
+        return options.filter(option => option.code.toLowerCase().includes(state.inputValue.toLowerCase()));
+      }}
+      onChange={(event, value) => handleOptionSelected(value)} 
+    />
   </div>
-  )
-}
+  );
+};
 
 export default PackingCode;
 
 const top100Films = [
   {
-    "code": "00",
-    "description": "No requirement."
+      code: "0",
+      description: "MIL-STD-2073-1D Code: Packing not authorized."
   },
   {
-    "code": "AA",
-    "description": "MIL-STD-2073-1B/2C Code: Material used shall be in accordance with the requirements of MIL-P-116."
+      code: "2",
+      description: "Packing shall be accomplished using cleated-plywood boxes, overseas type, conforming to ASTM-D6251, Type III, Class 2, or nailed wood boxes conforming to ASTM-D6880, Class 2, heavy duty."
   },
   {
-    "code": "AB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-B-131, type II, barrier, watervaporproof, flexible, heat-sealable, flame resistant."
+      code: "3",
+      description: "MIL-STD-2073-1B/2C Code: Overpacking shall be accomplished using PPP-B-601, overseas type, or PPP-B-621, class 2, style 4 boxes."
   },
   {
-    "code": "BA",
-    "description": "QQ-A-1876, aluminum foil"
+      code: "4",
+      description: "MIL-STD-2073-1D Code: See method of preservation."
   },
   {
-    "code": "CA",
-    "description": "A-A-203, kraft wrapping paper."
+      code: "5",
+      description: "MIL-STD-2073-1D Code: Overpacking shall be accomplished using cleated-plywood boxes, domestic type, conforming to PPP-B-601 or nailed wood boxes conforming to PPP-B-621, Class 1, Style 4."
   },
   {
-    "code": "CB",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type I, grade B, 30 lb. basis weight."
+      code: "6",
+      description: "Packing shall be accomplished to meet the performance test requirements of ASTM-D4169, Distribution Cycle 18, Assurance Level 3."
   },
   {
-    "code": "CC",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type I, grade B, 40 lb. basis weight."
+      code: "7",
+      description: "Packing shall be accomplished using cleated-plywood boxes conforming to ASTM-D6251, Type III, Class 1 (domestic), or nailed wood boxes conforming to PPP-B-621, Class 1, or wirebound boxes conforming to PPP-B-585, Class 1."
   },
   {
-    "code": "CD",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type I, grade B, 60 lb. basis weight."
+      code: "8",
+      description: "Packing shall be accomplished in accordance with the Level A packing requirements as specified for the item."
   },
   {
-    "code": "CE",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type II, grade C, 60 lb. basis weight, fire retardant."
+      code: "9",
+      description: "Packing shall be accomplished in accordance with the Level B packing requirements as specified for the item."
   },
   {
-    "code": "CF",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-268, paper, kraft, wrapping, type II, grade D, 55 lb. basis weight, fire retardant."
+      code: "A",
+      description: "Packing shall be accomplished using fiberboard boxes, weather resistant class, fabricated in accordance with ASTM-D5118, or triplewall fiberboard boxes conforming to ASTM-D5168, class weather resistant."
   },
   {
-    "code": "DA",
-    "description": "A-A-1249, paper, tissue."
+      code: "B",
+      description: "Packing shall be accomplished using ASTM-D6251, Type III, Class 2, overseas cleated plywood boxes or wirebound wood boxes conforming to PPP-B-585, Class 3 (military overseas)."
   },
   {
-    "code": "DB",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-553, paper, wrapping, tissue, type I."
+      code: "C",
+      description: "Packing shall be accomplished using cleated-plywood wood boxes conforming to ASTM-D6251, Type III, Class 2 or nailed wood boxes conforming to ASTM-D6880, Class 2, heavy duty, or covered wood crates conforming to ASTM-D6039, Type V, Style B, or lumber and plywood sheathed wood crates conforming to MIL-C-104, or load-bearing base skidded wood-cleated boxes conforming to ASTM-D6256, Type II (overseas), or steel or aluminum slotted angle crates conforming to MIL-C-9897, Type I, or open wood crates conforming to MIL-C-3774."
   },
   {
-    "code": "DC",
-    "description": "MIL-STD-2073-1B/2C Code: UU-P-553, paper, wrapping, tissue, type II."
+      code: "D",
+      description: "MIL-STD-2073-1D Code: Overpacking shall be accomplished using open wood crates conforming to MIL-C-3774, or open wood crates conforming to ASTM-D6039."
   },
   {
-    "code": "EA",
-    "description": "MIL-DTL-17667, neutral wrapping paper."
+      code: "E",
+      description: "Packing shall be accomplished to meet the performance test requirements of ASTM-D4169, Distribution Cycle 18, Assurance Level 1."
   },
   {
-    "code": "EB",
-    "description": "MIL-DTL-17667, Type I, neutral wrapping paper, flat."
+      code: "F",
+      description: "Packing is not required: the unit container shall also serve as the shipping container. Closure, sealing and reinforcement shall be in accordance with applicable specification for shipping container."
   },
   {
-    "code": "EC",
-    "description": "MIL-DTL-17667, Type II, neutral wrapping paper, creped."
+      code: "G",
+      description: "MIL-STD-2073-1B/2C Code: Overpacking shall be accomplished in accordance with requirements in the applicable commodity/procedural packaging/packing specification as specified for level A."
   },
   {
-    "code": "ED",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-P-17667, chemically neutral wrapping paper, type II, class 2."
+      code: "H",
+      description: "Packing shall be accomplished using boxes fabricated in accordance with ASTM-D5118, class weather-resistant."
   },
   {
-    "code": "FA",
-    "description": "MIL-P-130, laminated and creped wrapping paper."
+      code: "K",
+      description: "MIL-STD-2073-1B/2C Code: Overpacking shall be accomplished using fiberboard boxes conforming to PPP-B-636, class domestic or weather resistant."
   },
   {
-    "code": "FB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-P-130, laminated and creped wrapping paper, type I, 150 lb basis wt."
+      code: "L",
+      description: "Packing shall be accomplished using fiberboard boxes fabricated in accordance with ASTM-D5118, Class Domestic or ASTM-D5168, Class 1 non-weather resistant."
   },
   {
-    "code": "FC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-P-130, laminated and creped wrapping paper, type II, 125 lb basis wt."
+      code: "M",
+      description: "MIL-STD-2073-1D Code: Overpacking shall be accomplished using Class 1, domestic wood cleated panelboard boxes conforming to ASTM-D6251 or wirebound wood boxes conforming to PPP-B-585, Class 1, or loadbearing base, skidded, wood-cleated boxes conforming to MIL-B-26195, Type I."
   },
   {
-    "code": "FD",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-P-130, laminated and creped wrapping paper, type III, 100 lb basis wt."
+      code: "N",
+      description: "MIL-STD-2073-1D Code: Overpacking shall be accomplished using cleated plywood wood boxes, domestic type, conforming to PPP-B-601, or nailed and lockcorner wood boxes conforming to PPP-B-621, Class 1, or covered wood crates, domestic class, conforming to ASTM-D6039, Style B."
   },
   {
-    "code": "GA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-B-121, greaseproof, waterproof barrier."
+      code: "P",
+      description: "Packing shall be accomplished using open wood crates conforming to ASTM-D6039, Type V, Style B, or open wood crates conforming to MIL-C-3774, or open steel or aluminum slotted angle crates conforming to MIL-C-9897, Type I."
   },
   {
-    "code": "GB",
-    "description": "MIL-PRF-121, greaseproof, waterproof barrier."
+      code: "Q",
+      description: "Packing shall be accomplished in accordance with table C-II for the packing level specified. Closure sealing and reinforcement shall be in accordance with the appropriate shipping container specification."
   },
   {
-    "code": "GC",
-    "description": "MIL-PRF-121, Type I, medium duty, greaseproof, waterproof barrier."
+      code: "R",
+      description: "Packing shall be accomplished to meet the performance test requirements of ASTM-D4169, Distribution Cycle 18, Assurance Level 2."
   },
   {
-    "code": "GD",
-    "description": "MIL-PRF-121, Type II, heavy duty, greaseproof, waterproof barrier."
+      code: "S",
+      description: "MIL-STD-2073-1B/2C Code: Overpacking shall be accomplished using PPP-B-636, class domestic, special requirements. When size and weight limitations are exceeded, a suitable container shall be selected from MIL-STD-2073-1, appendix A, table VII."
   },
   {
-    "code": "GE",
-    "description": "MIL-PRF-121, Type III, extra heavy duty, greaseproof, waterproof barrier."
+      code: "T",
+      description: "Packing shall be accomplished by use of fiberboard containers fabricated in accordance with ASTM-D5118, weather-resistant class, or triple wall fiberboard boxes conforming to ASTM-D5168, class weather resistant; or whenever practicable, by means of shrink-film conforming to A-A-3174."
   },
   {
-    "code": "HA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding."
+      code: "U",
+      description: "Items or packages that require packing for acceptance by the carrier shall be packed in exterior type shipping containers in a manner that will ensure safe transportation at the lowest rate to the point of delivery and shall meet, as a minimum, the requirements of the following rules and regulations, as applicable to the mode(s) of transportation to be utilized: (a) Postal Regulations (b) Department of Transportation Regulations (c) Civil Air Regulations (d) Uniform Freight Classification Rules (e) National Motor Freight Classification Rules (f) American Truckers' Association Rules (g) Other applicable carriers' rules (h) Military Air Regulations for dangerous materials. Dangerous goods shall be prepared for shipment according to applicable Department of Transportation (DOT) regulations and international regulations in effect at time of shipment. Shipments by parcel post must comply with Postal Regulations."
   },
   {
-    "code": "HB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type I."
+      code: "X",
+      description: "MIL-STD-2073-1B/2C Code: Overpacking shall be accomplished in accordance with ASTM D 3951."
   },
   {
-    "code": "HC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type II."
+      code: "Y",
+      description: "MIL-STD-2073-1B/2C Code: Packager's option so long as all other contractual requirements are met."
   },
   {
-    "code": "HD",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type III."
+      code: "Z",
+      description: "Special requirement. See specific instructions or drawings provided."
   },
   {
-    "code": "HE",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type IV."
-  },
-  {
-    "code": "HF",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, cellulose wadding, type V."
-  },
-  {
-    "code": "IA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 20 lb basis wt."
-  },
-  {
-    "code": "IB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 30 lb basis wt."
-  },
-  {
-    "code": "IC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 40 lb basis wt."
-  },
-  {
-    "code": "ID",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 50 lb basis wt."
-  },
-  {
-    "code": "IE",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 60 lb basis wt."
-  },
-  {
-    "code": "IF",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 70 lb basis wt."
-  },
-  {
-    "code": "IG",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 80 lb basis wt."
-  },
-  {
-    "code": "IH",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 90 lb basis wt."
-  },
-  {
-    "code": "II",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type I, grade B, 100 lb basis wt."
-  },
-  {
-    "code": "JA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 30 lb basis wt."
-  },
-  {
-    "code": "JB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 40 lb basis wt."
-  },
-  {
-    "code": "JC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 50 lb basis wt."
-  },
-  {
-    "code": "JD",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 60 lb basis wt."
-  },
-  {
-    "code": "JE",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 70 lb basis wt."
-  },
-  {
-    "code": "JF",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 80 lb basis wt."
-  },
-  {
-    "code": "JG",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 90 lb basis wt."
-  },
-  {
-    "code": "JH",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, paper, cushioning, type II, grade B, 100 lb basis wt."
-  },
-  {
-    "code": "KA",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam."
-  },
-  {
-    "code": "KB",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam, urethane, open cell, MIL-P-26514, type I."
-  },
-  {
-    "code": "KC",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam, urethane, open cell, MIL-P-26514, type II."
-  },
-  {
-    "code": "KD",
-    "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam, urethane, open cell, MIL-P-26514, type III."
-  },
-  {
-    "code": "KE",
-   "description": "MIL-STD-2073-1B/2C Code: MIL-C-104, plastic foam, urethane, open cell, MIL-P-26514, type IV."
+      code: "",
+      description: "Not Specified."
   }
-  ]
+]
+
 
 
