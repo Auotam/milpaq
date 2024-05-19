@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 const path = require("path");
-const PackingCode = ({ setData }) => {
+const PackingCode = ({ setData, reset }) => {
   const [movieOptions, setMovieOptions] = useState([]);
 
   

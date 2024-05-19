@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 const path = require("path");
-const MidSart = ({ setData }) => {
+const MidSart = ({ setData, reset }) => {
   const [movieOptions, setMovieOptions] = useState([]);
 
   // Function to handle data retrieval and update parent component's state
