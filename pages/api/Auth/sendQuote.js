@@ -1,8 +1,8 @@
 import nodemailer from 'nodemailer';
-import { useToast } from './ToastContext';
+
 
 export default async function handler(req, res) {
-  const { showToast } = useToast(); // Access the showToast function from the toast context
+  
 
   if (req.method === 'POST') {
     const { userEmail, adminEmail, selectedData } = req.body;
@@ -67,7 +67,7 @@ export default async function handler(req, res) {
       });
 
       // Show success toast message
-      showToast('Emails sent successfully');
+      
 
       // Return success response
       res.status(200).json({ message: 'Emails sent successfully' });
@@ -75,7 +75,7 @@ export default async function handler(req, res) {
       console.error('Email sending error:', error);
 
       // Show error toast message
-      showToast('Failed to send emails');
+      
 
       res.status(500).json({ message: 'Failed to send emails' });
     }
