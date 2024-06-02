@@ -1,6 +1,19 @@
 import React from 'react'
+import useUserData from '@/utils/UseUserdata';
 
 const AccountPage = () => {
+  const userData = useUserData();
+  if (!userData) {
+    return null;
+  }
+
+  const getInitials = (name) => {
+    return name
+      .split(' ')
+      .map((part) => part.charAt(0))
+      .join('')
+      .toUpperCase();
+  };
   return (
     <main className="main-wrapper">
     
@@ -44,26 +57,25 @@ const AccountPage = () => {
                   <div className="profile-image">
                     <img src="assets/images/profile/profile-1.png" alt="" />
                     <div className="update-image">
-                      <input type="file" />
-                      <label for=""><i className="lni lni-cloud-upload"></i></label>
+                    {getInitials(userData.user.name)}
                     </div>
                   </div>
                   <div className="profile-meta">
-                    <h5 className="text-bold text-dark mb-10">John Doe</h5>
-                    <p className="text-sm text-gray">Web & UI/UX Design</p>
+                    <h5 className="text-bold text-dark mb-10">{userData.user.name}</h5>
+                    <p className="text-sm text-gray">{userData.user.role}</p>
                   </div>
                 </div>
                 <div className="input-style-1">
                   <label>Email</label>
-                  <input type="email" placeholder="admin@example.com" value="admin@example.com" />
+                  <input type="email" placeholder="admin@example.com" value={userData.user.email}/>
                 </div>
                 <div className="input-style-1">
                   <label>Password</label>
-                  <input type="password" value="admin@example.com" />
+                  <input type="password" value={userData.user.password} />
                 </div>
                 <div className="input-style-1">
                   <label>Website</label>
-                  <input type="text" placeholder="www.uideck.com" value="www.uideck.com" />
+                  <input type="text" placeholder="www.uideck.com" value="www.example.com" />
                 </div>
                 <div className="input-style-1">
                   <label>Bio</label>
@@ -83,13 +95,13 @@ const AccountPage = () => {
                   <div className="col-12">
                     <div className="input-style-1">
                       <label>Full Name</label>
-                      <input type="text" placeholder="Full Name" />
+                      <input type="text" placeholder={userData.user.name} />
                     </div>
                   </div>
                   <div className="col-12">
                     <div className="input-style-1">
                       <label>Email</label>
-                      <input type="email" placeholder="Email" />
+                      <input type="email" placeholder={userData.user.email} />
                     </div>
                   </div>
                   <div className="col-12">
@@ -125,8 +137,7 @@ const AccountPage = () => {
                           <option value="">USA</option>
                           <option value="">UK</option>
                           <option value="">Canada</option>
-                          <option value="">India</option>
-                          <option value="">Bangladesh</option>
+                          
                         </select>
                       </div>
                     </div>

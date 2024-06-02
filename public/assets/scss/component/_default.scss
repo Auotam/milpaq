@@ -15125,11 +15125,11 @@ h6,
 
 /* ========== header css ========== */
 .header {
-  padding: 22px 0;
+  padding: 5px 0;
   background: #fff;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 99; margin-left: 20%;;
 }
 .header .header-left .menu-toggle-btn .main-btn {
   padding: 10px 16px;
@@ -15147,7 +15147,9 @@ h6,
   border: 1px solid #efefef;
   background: rgba(239, 239, 239, 0.5);
   border-radius: 8px;
-  padding: 10px 10px 10px 44px;
+  padding: 1px 5px 4px 25px;
+  transition: all 0.3s ease-out 0s;
+  margin-top: 4px;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -15392,7 +15394,11 @@ h6,
   border-radius: 50%;
   margin-right: 14px;
   position: relative;
+  background-color: #7e5edd ;
+  color: #fff;
+  font-weight: 700;
 }
+.profile-image{ margin-top: 9px;}
 .header .header-right .profile-box .profile-info .info .image img {
   width: 100%;
   border-radius: 50%;
@@ -15824,14 +15830,19 @@ h6,
   right: 0;
   width: 30px;
   height: 30px;
-  background: #efefef;
+  
   border: 2px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 99;
+  z-index: 99;    background: #7e5edd;
+  width: 81px;
+  height: 81px;
+  color: #fff;
+  font-size: 33px;
+  font-weight: bold;
 }
 .settings-card-1 .profile-info .profile-image .update-image:hover {
   opacity: 0.9;
@@ -16059,7 +16070,7 @@ h6,
   padding: 20px 0px;
   height: 100vh;
   position: fixed;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   top: 0;
   left: 0;
@@ -18461,8 +18472,8 @@ header img.logo{ width: 130px;}
   overflow-x: hidden;
   padding-top: 15px;
   position: fixed;
-  right: -21%;
-  top: 18%;
+  right: -19%;
+  top: 10%;
   transition: 0.5s;
   width: 0;
   z-index: 99999999999;
@@ -18488,3 +18499,132 @@ header img.logo{ width: 130px;}
   font-size: 19px;}
 
   .itemsnew h3{ margin-top:-28px; }
+.headhelp{ font-size: 65px; font-weight: 900; margin-bottom: 30px;}
+
+
+.email-us{ color:#7e5edd;  font-size: 20px; font-weight: bold; }
+
+.faq-section {
+  
+  
+  padding: 0vh 0 0;
+}
+.faq-title h2 {
+position: relative;
+margin-bottom: 45px;
+display: inline-block;
+font-weight: 600;
+line-height: 1;
+}
+.faq-title h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 60px;
+  height: 2px;
+  background: #E91E63;
+  bottom: -25px;
+  margin-left: -30px;
+}
+.faq-title p {
+padding: 0 190px;
+margin-bottom: 10px;
+}
+
+.faq {
+background: #FFFFFF;
+box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+border-radius: 4px;
+}
+
+.faq .card {
+border: none;
+background: none;
+border-bottom: 1px dashed #CEE1F8;
+}
+
+.faq .card .card-header {
+padding: 0px;
+border: none;
+background: none;
+-webkit-transition: all 0.3s ease 0s;
+-moz-transition: all 0.3s ease 0s;
+-o-transition: all 0.3s ease 0s;
+transition: all 0.3s ease 0s;
+}
+
+.faq .card .card-header:hover {
+  background: rgba(233, 30, 99, 0.1);
+  padding-left: 10px;
+}
+.faq .card .card-header .faq-title {
+width: 100%;
+text-align: left;
+padding: 0px;
+padding-left: 30px;
+padding-right: 30px;
+font-weight: 400;
+font-size: 15px;
+letter-spacing: 1px;
+color: #3B566E;
+text-decoration: none !important;
+-webkit-transition: all 0.3s ease 0s;
+-moz-transition: all 0.3s ease 0s;
+-o-transition: all 0.3s ease 0s;
+transition: all 0.3s ease 0s;
+cursor: pointer;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.faq .card .card-header .faq-title .badge {
+display: inline-block;
+width: 20px;
+height: 20px;
+line-height: 14px;
+float: left;
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+text-align: center;
+background: #E91E63;
+color: #fff;
+font-size: 12px;
+margin-right: 20px;
+}
+
+.faq .card .card-body {
+padding: 30px;
+padding-left: 35px;
+padding-bottom: 16px;
+font-weight: 400;
+font-size: 16px;
+color: #6F8BA4;
+line-height: 28px;
+letter-spacing: 1px;
+border-top: 1px solid #F3F8FF;
+}
+
+.faq .card .card-body p {
+margin-bottom: 14px;
+}
+
+@media (max-width: 991px) {
+.faq {
+  margin-bottom: 30px;
+}
+.faq .card .card-header .faq-title {
+  line-height: 26px;
+  margin-top: 10px;
+}
+}
+
+/* styles/globals.css */
+.nav-item.active a {
+  background-color: #cfbeff; /* Example color for active item background */
+  color: #FFFFFF; /* Example color for active item text */
+}
+
+.nav-item.active a .icon svg {
+  fill: #FFFFFF; /* Example color for active item icon */
+}

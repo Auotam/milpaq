@@ -103,28 +103,28 @@ const Modal = ({ onClose, data }) => {
                 <tr>
                   <td>Length</td>
                   <td></td>
-                  <td>{length} Inch</td>
+                  <td>{length}</td>
                 </tr>
               )}
               {width && (
                 <tr>
                   <td>Width</td>
                   <td></td>
-                  <td>{width} Inch</td>
+                  <td>{width}</td>
                 </tr>
               )}
               {height && (
                 <tr>
                   <td>Height</td>
                   <td></td>
-                  <td>{height} Inch</td>
+                  <td>{height}</td>
                 </tr>
               )}
               {Weight && (
                 <tr>
                   <td>Weight</td>
                   <td></td>
-                  <td>{Weight} Pound</td>
+                  <td>{Weight}</td>
                 </tr>
               )}
             </tbody>
