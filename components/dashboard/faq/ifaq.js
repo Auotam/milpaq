@@ -23,7 +23,7 @@ const Ifaq = () => {
                     <div className="col-md-6 offset-md-3"></div>
                     <div className="col-md-12">
                       <div className="faq" id="accordion">
-                        {[...Array(7)].map((_, i) => (
+                        {[...Array(4)].map((_, i) => (
                           <div className="card" key={i}>
                             <div className="card-header" id={`faqHeading-${i+1}`}>
                               <div className="mb-0">
@@ -48,32 +48,75 @@ const Ifaq = () => {
           </div>
         </div>
       </section>
+
+      
+<section className="card-components">
+            <div className="container-fluid">
+              
+            <div className="container mt-40">
+              <div className='cards-styles card p-5' >
+  <div className="row">
+  <div className="col-md-6">
+    <h1 className='headhelp'>Let's get you some help!</h1>
+    <h6 className='mb-2'>Have any issue? Send us an </h6>
+
+   <span className='d-flex '> <h6 className='mr-10 font-xl mt-2  '>Email us: </h6><span className="email-us">info@milpaq.com</span></span>
+    <div className="img-wrapper">
+    
+      </div>
+  </div>
+  
+  <div className="col-md-6">
+    
+  <div className="form-group mb-2">
+    <label for="list">Name</label>
+    <input type="text" className="form-control mt-2" id="list" aria-describedby="emailHelp" />
+  </div>
+  <div className="form-group mb-2">
+    <label for="tags">Email</label>
+    <input type="text" className="form-control mt-2" id="tags" />
+  </div>
+      
+    <div className="form-group mb-2">
+    <label for="describe">Message</label>
+    <textarea type="text" className="form-control mt-2" id="describe" rows="5"></textarea>
+  </div>
+      
+            
+<button type="button" className="btn btn-primary main-btn primary-btn btn-hover mt-20"><span>Submit</span> <i className="fas fa-long-arrow-alt-right"></i></button>
+  </div>
+    
+  </div>
+
+  </div>
+</div>
+           
+              
+              
+            </div>
+            
+          </section>
     </div>
   );
 };
 
 const getFaqTitle = (index) => {
   const titles = [
-    'What is Lorem Ipsum?',
-    'Where does it come from?',
-    'Why do we use it?',
-    'Where can I get some?',
-    'What is Lorem Ipsum?',
-    'Where does it come from?',
-    'Why do we use it?',
+    'Can I use MILPAQ for both small and large-scale packaging projects',
+    ' Is MILPAQ compliant with MIL-STD-2073 and MIL-STD-129 requirements? ',
+    'Can I purchase the required packaging materials directly through MILPAQ?',
+    'Is there a support team available to assist if I encounter any issues while using MILPAQ ?',
+   
   ];
   return titles[index - 1];
 };
 
 const getFaqContent = (index) => {
   const contents = [
-    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
-    'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here.\'',
-    'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
-    'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
-    'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
+    'Absolutely! MILPAQ is designed to accommodate the needs of businesses and government agencies of all sizes. Whether you are packaging a single item or managing a large-scale deployment, MILPAQs intuitive interface and comprehensive features are here to streamline your packaging process.',
+    'Yes, MILPAQ is fully compliant with both MIL-STD-2073 and MIL-STD-129 standards. Our software is meticulously designed to interpret the complex packaging codes and provide clear instructions to ensure compliance with government regulations.',
+    'Yes, MILPAQ provides convenient links to purchase the necessary packaging materials directly from trusted suppliers. This feature saves you time and ensures a seamless packaging process from start to finish.',
+    'Absolutely! Our dedicated support team is here to assist you every step of the way. Whether you have questions about using the software or encounter any technical issues, we are just a click away. Simply reach out to us via email or through our support portal, and we will be happy to help.',
   ];
   return contents[index - 1];
 };

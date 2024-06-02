@@ -1,5 +1,6 @@
 import React from 'react';
 import useUserData from '@/utils/UseUserdata';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const userData = useUserData();
@@ -28,6 +29,7 @@ const Header = () => {
                 
               </div>
               <div className="header-search d-none d-md-flex">
+                <a className='visit' href="/">Vist Website</a>
                 <form action="#">
                   <input type="text" placeholder="Search..." />
                   <button>
@@ -67,20 +69,14 @@ const Header = () => {
                   </li>
                   <li className="divider"></li>
                   <li>
-                    <a href="#0">
+                    <a href="/mydashboard/account">
                       <i className="lni lni-user"></i> View Profile
                     </a>
                   </li>
+                
                   <li>
-                    <a href="#0">
-                      <i className="lni lni-alarm"></i> Notifications
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0"> <i className="lni lni-inbox"></i> Messages </a>
-                  </li>
-                  <li>
-                    <a href="#0"> <i className="lni lni-cog"></i> Settings </a>
+                    
+                    <a href="/mydashboard/account"> <i className="lni lni-cog"></i> Settings </a> 
                   </li>
                   <li className="divider"></li>
                   <li>

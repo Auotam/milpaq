@@ -1,7 +1,5 @@
 import Link from "next/link";
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../../components/common/sidebar";
 import SidebarCart from "../../components/common/sidebar-cart";
 import useCartInfo from "../../hooks/use-cart-info";
@@ -19,7 +17,7 @@ const HeaderOne = () => {
     if (!token) {
       Router.push("/");
     }
-  }, []);
+  }, [token]);
 
   const logout = () => {
     Cookies.remove("token");
@@ -30,32 +28,22 @@ const HeaderOne = () => {
   console.log(userData);
   const [openCart, setOpenCart] = useState(false);
   const { quantity } = useCartInfo();
-  //for mobile menu
   const { setShowSidebar } = useGlobalContext();
 
-  window.addEventListener("scroll", function () {
-    "use strict";
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector(".header-main");
+      if (window.scrollY >= 40) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    var b = window.scrollY;
-
-    if (b > 80) {
-      var wsmainfull = document.querySelector(".wsmainfull");
-      wsmainfull.classList.add("scroll");
-    } else {
-      var wsmainfull = document.querySelector(".wsmainfull");
-      wsmainfull.classList.remove("scroll");
-    }
-  });
-
-
-  const sticky = (e) => {
-    const header = document.querySelector(".header-main");
-    const scrollTop = window.scrollY;
-    scrollTop >= 40
-      ? header.classList.add("sticky")
-      : header.classList.remove("sticky");
-  };
-  // Sticky Menu Area End
   return (
     <>
       <header
@@ -75,24 +63,28 @@ const HeaderOne = () => {
           <div className="wsmainfull menu clearfix">
             <div className="wsmainwp clearfix">
               <div className="desktoplogo">
-                <a href="/" className="logo-black">
-                  <img
-                    className="light-theme-img"
-                    src="/assets/images/logo-white.png"
-                    alt="logo"
-                  />
-                  <img
-                    className="dark-theme-img"
-                    src="/assets/images/logo-white.png"
-                    alt="logo"
-                  />
-                </a>
+                <Link href="/">
+                  <a className="logo-black">
+                    <img
+                      className="light-theme-img"
+                      src="/assets/images/logo-white.png"
+                      alt="logo"
+                    />
+                    <img
+                      className="dark-theme-img"
+                      src="/assets/images/logo-white.png"
+                      alt="logo"
+                    />
+                  </a>
+                </Link>
               </div>
 
               <div className="desktoplogo">
-                <a href="/" className="logo-white">
-                  <img src="/assets/images/logo-white.png" alt="logo" />
-                </a>
+                <Link href="/">
+                  <a className="logo-white">
+                    <img src="/assets/images/logo-white.png" alt="logo" />
+                  </a>
+                </Link>
               </div>
 
               <nav className="wsmenu clearfix">
@@ -102,30 +94,30 @@ const HeaderOne = () => {
                     <span className="wsmenu-click">
                       <i className="wsmenu-arrow"></i>
                     </span>
-                    <a href="/" className="h-link">
-                      Home{" "}
-                    </a>
+                    <Link href="/">
+                      <a className="h-link">Home</a>
+                    </Link>
                   </li>
 
                   <li className="nl-simple" aria-haspopup="true">
-                    <a href="/" className="h-link">
-                      Features
-                    </a>
+                    <Link href="/">
+                      <a className="h-link">Features</a>
+                    </Link>
                   </li>
 
                   <li aria-haspopup="true">
                     <span className="wsmenu-click">
                       <i className="wsmenu-arrow"></i>
                     </span>
-                    <a href="/" className="h-link">
-                      About
-                    </a>
+                    <Link href="/">
+                      <a className="h-link">About</a>
+                    </Link>
                   </li>
 
                   <li className="nl-simple" aria-haspopup="true">
-                    <a href="/" className="h-link">
-                      Help Center
-                    </a>
+                    <Link href="/">
+                      <a className="h-link">Help Center</a>
+                    </Link>
                   </li>
 
                   {userData ? (
@@ -141,41 +133,40 @@ const HeaderOne = () => {
                           <span className="text-left">
                             Welcome, {userData.user.name}
                           </span>
-                          {/* <li aria-haspopup="true"><a href="#lnk-1"><span>{userData.user.email}</span></a></li> */}
 
                           <li aria-haspopup="true">
-                            <a href="/mydashboard">
-                              <span>{userData.name}</span>My Dashboard
-                            </a>
+                            <Link href="/mydashboard">
+                              <a>My Dashboard</a>
+                            </Link>
                           </li>
-                          <button
-                            className="nl-simple reg-fst-link mobile-last-link"
-                            onClick={logout}
-                          >
-                            Logout{" "}
-                          </button>
+                          <li>
+                            <button
+                              className="nl-simple reg-fst-link mobile-last-link"
+                              onClick={logout}
+                            >
+                              Logout
+                            </button>
+                          </li>
                         </ul>
                       </li>
                     </>
                   ) : (
                     <>
-                      {" "}
                       <li
                         className="nl-simple reg-fst-link mobile-last-link"
                         aria-haspopup="true"
                       >
-                        <a href="/login" className="h-link">
-                          Sign in
-                        </a>
+                        <Link href="/login">
+                          <a className="h-link">Sign in</a>
+                        </Link>
                       </li>
                       <li className="nl-simple" aria-haspopup="true">
-                        <a
-                          href="/register"
-                          class="btn r-04 btn--theme hover--tra-white"
-                        >
-                          Sign up
-                        </a>
-                      </li>{" "}
+                        <Link href="/register">
+                          <a className="btn r-04 btn--theme hover--tra-white">
+                            Sign up
+                          </a>
+                        </Link>
+                      </li>
                     </>
                   )}
                 </ul>

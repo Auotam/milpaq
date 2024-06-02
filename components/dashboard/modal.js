@@ -51,9 +51,6 @@ const Modal = ({ onClose, data }) => {
 
   const isDataAvailable = Object.keys(data).length > 0;
 
-  // Extract dimensions and other package data
-  const { length, width, height, Weight, ...packageData } = data;
-
   return (
     <div className="modal-overlay">
       <div className="modal sidenavR">
@@ -92,41 +89,21 @@ const Modal = ({ onClose, data }) => {
               </tr>
             </thead>
             <tbody>
-              {Object.entries(packageData).map(([component, componentData]) => (
-                <tr key={component}>
-                  <td>{component}</td>
-                  <td>{componentData?.code || ''}</td>
-                  <td>{componentData?.description || ''}</td>
-                </tr>
+              {Object.entries(data).map(([key, value]) => (
+                typeof value === 'object' ? (
+                  <tr key={key}>
+                    <td>{key}</td>
+                    <td>{value?.code || ''}</td>
+                    <td>{value?.description || ''}</td>
+                  </tr>
+                ) : (
+                  <tr key={key}>
+                    <td>{key}</td>
+                    <td></td>
+                    <td>{value}</td>
+                  </tr>
+                )
               ))}
-              {length && (
-                <tr>
-                  <td>Length</td>
-                  <td></td>
-                  <td>{length}</td>
-                </tr>
-              )}
-              {width && (
-                <tr>
-                  <td>Width</td>
-                  <td></td>
-                  <td>{width}</td>
-                </tr>
-              )}
-              {height && (
-                <tr>
-                  <td>Height</td>
-                  <td></td>
-                  <td>{height}</td>
-                </tr>
-              )}
-              {Weight && (
-                <tr>
-                  <td>Weight</td>
-                  <td></td>
-                  <td>{Weight}</td>
-                </tr>
-              )}
             </tbody>
           </table>
         </div>

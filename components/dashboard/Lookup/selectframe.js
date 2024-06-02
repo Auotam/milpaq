@@ -16,6 +16,7 @@ import OptionFeatures from '../LookFile/optionalProcedure';
 import StorageCodes from '../LookFile/storagCodes';
 import Lwh from '../LookFile/lengthwe';
 import { TextField } from '@mui/material';
+import RecentSearches from '../recentSearch';
 
 const Selectframe = () => {
   const [showModal, setShowModal] = useState(false);
@@ -40,9 +41,12 @@ const Selectframe = () => {
   const [weight, setWeight] = useState('');
   const [unitType, setUnitType] = useState('inch');
   const [reset, setReset] = useState(false); // New reset state
+  const [recentSearches, setRecentSearches] = useState([]);
 
   const handleGetData = () => {
     setShowModal(true);
+
+    const timestamp = Date.now(); // Get current timestamp
 
     const dataToDisplay = {
       'Length': length,
@@ -63,16 +67,15 @@ const Selectframe = () => {
       'Option Features Data': optionFeatures,
       'Storage Codes Data': storageCodes,
       'Special Marking Data': specialMarking,
+      'Timestamp': timestamp, // Include timestamp
     };
 
+    const storedSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+    const updatedSearches = [{ data: dataToDisplay, timestamp }, ...storedSearches.slice(0, 4)]; // Limit to 5 recent searches
+    localStorage.setItem('recentSearches', JSON.stringify(updatedSearches));
+    setRecentSearches(updatedSearches);
 
-    
-
-    
-    
-
-
-    console.log(dataToDisplay)
+    console.log(dataToDisplay);
   };
 
   const handleReset = () => {
@@ -137,7 +140,6 @@ const Selectframe = () => {
                             <div className='w-100 d-flex itemsnew pt-20'>
                               <h4 className='mb-20'>Codes Lookup</h4>
                               <div className='d-flex align-items-center justify-content-between'>
-                               
                               </div>
                             </div>
                           </div>
@@ -158,20 +160,53 @@ const Selectframe = () => {
                           <OptionFeatures setData={setOptionFeature} reset={reset} />
                           <StorageCodes setData={setStorageCode} reset={reset} />
 
-                            <div className='' >
-                              <h4 className='mb-20'>Dimensions</h4>
-                              <div className='row'>
+                          <div className='' >
+                            <h4 className='mb-20'>Dimensions</h4>
+                            <div className='row'>
                               <div className='col-md-3 col-lg-3 col-sm-12 mb-4'>
-                            <TextField  id="outlined-basic" label="Length" variant="outlined"  placeholder="Length" value={length} onChange={(e) => setLength(e.target.value)} />
+                                <TextField
+                                  id="outlined-basic"
+                                  label="Length(inch)"
+                                  variant="outlined"
+                                  placeholder="Length"
+                                  value={length}
+                                  onChange={(e) => setLength(e.target.value)}
+                                />
+                              </div>
+                              <div className='col-md-3 col-lg-3 col-sm-12 mb-4'>
+                                <TextField
+                                  id="outlined-basic"
+                                  label="Width(inch)"
+                                  variant="outlined"
+                                  className='inputl'
+                                  type="text"
+                                  placeholder="Width"
+                                  value={width}
+                                  onChange={(e) => setWidth(e.target.value)}
+                                />
+                              </div>
+                              <div className='col-md-3 col-lg-3 col-sm-12 mb-4'>
+                                <TextField
+                                  id="outlined-basic"
+                                  label="Height(inch)"
+                                  variant="outlined"
+                                  placeholder="Height"
+                                  value={height}
+                                  onChange={(e) => setHeight(e.target.value)}
+                                />
+                              </div>
+                              <div className='col-md-3 col-lg-3 col-sm-12 mb-4'>
+                                <TextField
+                                  id="outlined-basic"
+                                  label="Weight(pound)"
+                                  variant="outlined"
+                                  placeholder="Weight"
+                                  value={weight}
+                                  onChange={(e) => setWeight(e.target.value)}
+                                />
+                              </div>
                             </div>
-                            <div className='col-md-3 col-lg-3 col-sm-12 mb-4'> <TextField  id="outlined-basic" label="Width" variant="outlined" className='inputl' type="text" placeholder="Width" value={width} onChange={(e) => setWidth(e.target.value)} />
-                            </div>
-                            <div className='col-md-3 col-lg-3 col-sm-12 mb-4'> <TextField  id="outlined-basic" label="Height" variant="outlined"  placeholder="Height" value={height} onChange={(e) => setHeight(e.target.value)} />
-                            </div>
-                            <div className='col-md-3 col-lg-3 col-sm-12 mb-4'>   <TextField  id="outlined-basic" label="Weight" variant="outlined"  placeholder="Weight" value={weight} onChange={(e) => setWeight(e.target.value)} />
-                            </div>
-                            </div>
-                            </div>
+                          </div>
 
                           <div>
                             <button className='main-btn active-btn btn-hover mr-10' onClick={handleGetData}>Get the Data</button>
@@ -211,7 +246,7 @@ const Selectframe = () => {
               'Option Features Data': optionFeatures,
               'Storage Codes Data': storageCodes,
               'Special Marking Data': specialMarking,
-            }).filter(([key, value]) => value !== null && value !== undefined)
+            }).filter(([key, value]) => value !== null && value !== undefined && value !== '')
           )}
         />
       )}
@@ -219,4 +254,5 @@ const Selectframe = () => {
   );
 };
 
-export default Selectframe;   
+export default Selectframe;
+

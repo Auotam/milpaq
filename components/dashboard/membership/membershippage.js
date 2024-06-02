@@ -37,7 +37,7 @@ const Membershippage = () => {
                   <div class="alert">
                     <h4 class="alert-heading">Free Plan</h4>
                     <p class="text-medium">
-                      currently you Are using Free Membership plan.
+                      Currently you are using free membership plan.
                     </p>
                   </div>
                 </div>

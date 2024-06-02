@@ -13518,16 +13518,24 @@ h6,
   background: #97ca31;
 }
 .info-alert .alert {
-  color: #97ca31;
-  border: 1px solid #97ca31;
-  background: rgba(151, 202, 49, 0.2);
+  color: #000;
+  border: 1px solid #9AA4CA;
+  background: #cfbeff;
   width: 100%;
 }
 .info-alert .alert .alert-heading {
-  color: #97ca31;
+  color: #000;
   margin-bottom: 15px;
 }
+.visit{ color: #7e5edd !important;
+  font-size: 12px;
+  margin-top: 8px;
+  margin-right: 19px;
+  border: 1px solid #7e5edd !important;
+  padding: 4px 20px;
+  border-radius: 4px;}
 
+.bgcl{ background-color: #7e5edd;}
 /* Alert success */
 .success-alert .left {
   background: #219653;
@@ -18623,8 +18631,9 @@ margin-bottom: 14px;
 .nav-item.active a {
   background-color: #cfbeff; /* Example color for active item background */
   color: #FFFFFF; /* Example color for active item text */
-}
+}.info-alert .alert
 
 .nav-item.active a .icon svg {
   fill: #FFFFFF; /* Example color for active item icon */
 }
+.tables-wrapper .content { width: 100%;}
