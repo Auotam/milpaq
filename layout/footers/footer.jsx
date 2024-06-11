@@ -21,56 +21,22 @@ const FooterOne = () => {
 
 
                 
-                <div className="col-sm-4 col-lg-3 col-xl-2">
-                    <div className="footer-links fl-1">
-                    
-                       
-                        <h6 className="s-17 w-700">Company</h6>
 
-                      
-                        <ul className="foo-links clearfix">
-                            <li><p><a href="about.html">About Us</a></p></li>
-                            <li><p><a href="blog-listing.html">Our Blog</a></p></li>						
-                            <li><p><a href="testimonials.html">Customers</a></p></li>	
-                            <li><p><a href="#">Community</a></p></li>			
-                        </ul>
-
-                    </div>
-                </div>	
-
-
-           
-                <div className="col-sm-4 col-lg-2">
-                    <div className="footer-links fl-2">
-                                        
-                       
-                        <h6 className="s-17 w-700">Product</h6>
-
-                       
-                        <ul className="foo-links clearfix">
-                            <li><p><a href="features.html">Integration</a></p></li>
-                            <li><p><a href="download.html">What's New</a></p></li>	
-                            <li><p><a href="pricing-1.html">Pricing</a></p></li>	
-                            <li><p><a href="help-center.html">Help Center</a></p></li>			
-                        </ul>
-
-                    </div>	
-                </div>	
 
 
                
-                <div className="col-sm-4 col-lg-3 col-xl-2">
+                <div className="col-sm-4 col-lg-6 col-xl-6">
                     <div className="footer-links fl-3">
                                         
                        
-                        <h6 className="s-17 w-700">Legal</h6>
+                        <h6 className="s-17 w-700">Usefull Links</h6>
 
                    
-                        <ul className="foo-links clearfix">
-                            <li><p><a href="terms.html">Terms of Use</a></p></li>										
-                            <li><p><a href="privacy.html">Privacy Policy</a></p></li>
-                            <li><p><a href="cookies.html">Cookie Policy</a></p></li>
-                            <li><p><a href="#">Site Map</a></p></li>
+                        <ul className="foo-links clearfix d-flex align-items-center justify-content-between">
+                            <li className='mr-2'><p><a href="/">Features</a></p></li>										
+                            <li className='mr-2'><p><a href="/">How it works</a></p></li>
+                            <li className='mr-2'><p><a href="/">Sign In</a></p></li>
+                            <li ><p><a href="#">Signup</a></p></li>
                         </ul>
 
                     </div>	
@@ -82,25 +48,12 @@ const FooterOne = () => {
                     <div className="footer-form">
 
                        
-                        <h6 className="s-17 w-700">Follow the Best</h6>
+                        <h6 className="s-17 w-700">Help Center</h6>
+
+                        <span className='mr-2'>Email Us:</span> Info@milpaq.com
 
                      
-                        <form className="newsletter-form">
-                                    
-                            <div className="input-group r-06">
-                                <input type="email" className="form-control" placeholder="Email Address" required id="s-email" /> 								
-                                <span className="input-group-btn ico-15">
-                                    <button type="submit" className="btn color--theme">
-                                        <span className="flaticon-right-arrow-1"></span>
-                                    </button>
-                                </span>
-                            </div>
-
-                            	
-                            <label for="s-email" className="form-notification"></label>
-                                        
-                        </form>
-                                                
+                                       
                     </div>	
                 </div>
 

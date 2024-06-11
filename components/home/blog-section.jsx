@@ -7,7 +7,7 @@ const BlogSection = () => {
     return (
         <>
        
-<section id="features-2" className="py-100 features-section division">
+<section id="features" className="py-100 features-section division">
     <div className="container">
 
         <div className="row justify-content-center">
@@ -42,8 +42,8 @@ const BlogSection = () => {
                             <img className="img-fluid dark-theme-img" src="/assets/images/f_05_dark.png" alt="feature-image" />
                         </div>
                         <div className="fbox-txt">
-                            <h6 className="s-22 w-700">Interactive Guidance</h6>
-                            <p>Step-by-step interactive guidance ensures nothing is overlooked in the packaging process, including the correct placement of MIL-STD-129 Labels, guaranteeing compliance with ease.</p>
+                            <h6 className="s-22 w-700">Interactive Guidence</h6>
+                            <p>Step-by-step interactive guidence ensures nothing is overlooked in the packaging process, including the correct placement of MIL-STD-129 Labels, guaranteeing compliance with ease.</p>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ const BlogSection = () => {
 
 <hr className="divider" />
 
-<section className="pt-100 ct-04 content-section division">
+<section id="how-to-work" className="pt-100 ct-04 content-section division">
 				<div className="container">
 
 

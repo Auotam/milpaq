@@ -70,7 +70,7 @@ const BrandSlider = ({brand_classA}) => {
         </div>
     </div>
 </section>
-<section id="banner-3" class="pt-100 banner-section">
+<section id="help-center" class="pt-100 banner-section">
     <div class="container">
         <div class="banner-3-wrapper bg--03 bg--scroll r-16">
             <div class="banner-overlay">
@@ -82,6 +82,9 @@ const BrandSlider = ({brand_classA}) => {
                             <a href="signup-1.html" class="btn r-04 btn--theme hover--tra-white">Get srarted - it's free</a>
                             <p class="p-sm btn-txt ico-15">
                                 <span class="flaticon-check"></span>Free to use, no credit card required.
+                            </p>
+                            <p class="p-sm btn-txt ico-15">
+                                <span class="flaticon-check">Email Us:</span>info@milpaq.com
                             </p>
                         </div>
                     </div>
