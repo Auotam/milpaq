@@ -15,7 +15,7 @@ const BlogSection = () => {
                 <div className="section-title mb-80">
                     <h2 className="s-50 w-700">Your All-in-One Packaging Partner</h2>
                     <p className="s-21 color--grey">Your go-to solution for military packaging perfection.
-.</p>
+</p>
                 </div>
             </div>
         </div>

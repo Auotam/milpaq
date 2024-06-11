@@ -42,8 +42,8 @@ const HeroSlider = () => {
                     <h2 className="s-56 w-700">Streamlining Military Packaging Compliance</h2>
                     <h6 className='mb-4'></h6>
                     <div className="btns-group">
-                        <a href="#banner-13" className="btn r-04 btn--theme hover--theme">Get started for free</a>
-                        <a href="#features-5" className="btn r-04 btn--tra-black hover--theme">How it works</a>
+                        <a href="/register" className="btn r-04 btn--theme hover--theme">Get started for free</a>
+                        <a href="#how-to-work" className="btn r-04 btn--tra-black hover--theme">How it works</a>
                     </div>
                     <ul class="advantages ico-15 mt-15 clearfix">
 									<li><p class="p-sm">Free to use, no credit card required.</p></li>

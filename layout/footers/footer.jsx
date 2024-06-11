@@ -1,3 +1,4 @@
+import { Facebook, Instagram, LinkedIn, YouTube } from '@mui/icons-material';
 import Link from 'next/link';
 import React from 'react';
 
@@ -36,14 +37,14 @@ const FooterOne = () => {
                     <div className="footer-links fl-3">
                                         
                        
-                        <h6 className="s-17 w-700">Usefull Links</h6>
+                        <h6 className="s-17 w-700">Useful Links</h6>
 
                    
                         <ul className="foo-links clearfix ">
-                            <li className='mr-2'><p><a href="/">Features</a></p></li>										
-                            <li className='mr-2'><p><a href="/">How it works</a></p></li>
-                            <li className='mr-2'><p><a href="/">Sign In</a></p></li>
-                            <li ><p><a href="#">Signup</a></p></li>
+                            <li className='mr-2'><p><a href="#features">Features</a></p></li>										
+                            <li className='mr-2'><p><a href="#how-to-works">How it works</a></p></li>
+                            <li className='mr-2'><p><a href="/signin">Sign In</a></p></li>
+                            <li ><p><a href="/register">Signup</a></p></li>
                         </ul>
 
                     </div>	
@@ -87,9 +88,10 @@ const FooterOne = () => {
                    
                     <div className="col">
                         <ul className="bottom-footer-socials ico-20 text-end">
-                            <li><a href="#"><span className="flaticon-twitter"></span></a></li>
-                            <li><a href="#"><span className="flaticon-instagram"></span></a></li>
-                            <li><a href="#"><span className="flaticon-youtube"></span></a></li>
+                            <li><a href="#"><Facebook/></a></li>
+                            <li><a href="#"><Instagram /></a></li>
+                            <li><a href="#"><YouTube/></a></li>
+                            <li><a href="#"><LinkedIn/></a></li>
                         </ul>
                     </div>
 
