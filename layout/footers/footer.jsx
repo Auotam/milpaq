@@ -79,7 +79,7 @@ const FooterOne = () => {
                     
                     <div className="col">
                         <div className="footer-copyright">
-                            <p className="p-sm">&copy; 2023 Milpaq. <span>All Rights Reserved</span></p>
+                            <p className="p-sm">&copy; 2024 MILPAQ. <span>All Rights Reserved</span></p>
                         </div>
                     </div>
 
@@ -87,7 +87,6 @@ const FooterOne = () => {
                    
                     <div className="col">
                         <ul className="bottom-footer-socials ico-20 text-end">
-                            <li><a href="#"><span className="flaticon-facebook"></span></a></li>
                             <li><a href="#"><span className="flaticon-twitter"></span></a></li>
                             <li><a href="#"><span className="flaticon-instagram"></span></a></li>
                             <li><a href="#"><span className="flaticon-youtube"></span></a></li>

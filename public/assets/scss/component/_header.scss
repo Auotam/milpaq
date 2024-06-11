@@ -1902,6 +1902,7 @@ body.wsactive {
 	-o-transform: rotateX(0deg);
 	-moz-transform: rotateX(0deg);
 	-webkit-transform: rotateX(0deg);
+
   }
   
   .wsmenu > .wsmenu-list > li  > ul.sub-menu > li > ul.sub-menu {
@@ -3666,6 +3667,7 @@ body.wsactive {
   /*------------------------------------------*/
   
   .wsmenu > .wsmenu-list > li > ul.sub-menu {
+    position: absolute; right:0;
     width: auto;
     min-width: 200px;
     top: 62px;

@@ -42,7 +42,7 @@ const BlogSection = () => {
                             <img className="img-fluid dark-theme-img" src="/assets/images/f_05_dark.png" alt="feature-image" />
                         </div>
                         <div className="fbox-txt">
-                            <h6 className="s-22 w-700">Interactive guide</h6>
+                            <h6 className="s-22 w-700">Interactive Guide</h6>
                             <p>Step-by-step interactive guide ensures nothing is overlooked in the packaging process, including the correct placement of MIL-STD-129 Labels, guaranteeing compliance with ease.</p>
                         </div>
                     </div>
