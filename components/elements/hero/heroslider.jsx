@@ -56,11 +56,7 @@ const HeroSlider = () => {
                 <div className="row">
                     <div className="col">
                         <div className="hero-21-img video-preview wow fadeInUp" >
-                            <a className="video-popup1" href="javascript:">
-                                <div className="video-btn video-btn-xl bg--theme">
-                                    <div className="video-block-wrapper"><span className="flaticon-play-button"></span></div>
-                                </div>
-                            </a>
+                            
                             <img className="img-fluid" src="assets/images/tablet-01.png" alt="video-preview" />
                         </div>
                     </div>
