@@ -42,9 +42,9 @@ const FooterOne = () => {
                    
                         <ul className="foo-links clearfix ">
                             <li className='mr-2'><p><a href="#features">Features</a></p></li>										
-                            <li className='mr-2'><p><a href="#how-to-works">How it works</a></p></li>
+                            <li className='mr-2'><p><a href="#how-to-works">How It Works</a></p></li>
                             <li className='mr-2'><p><a href="/signin">Sign In</a></p></li>
-                            <li ><p><a href="/register">Signup</a></p></li>
+                            <li ><p><a href="/register">Sign Up</a></p></li>
                         </ul>
 
                     </div>	
