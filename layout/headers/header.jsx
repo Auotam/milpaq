@@ -113,7 +113,7 @@ const HeaderOne = () => {
                       <i className="wsmenu-arrow"></i>
                     </span>
                     <a href="#how-to-work" className="h-link">
-                      How to work
+                      How it work
                     </a>
                   </li>
                   <li className="nl-simple" aria-haspopup="true">

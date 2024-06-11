@@ -22,17 +22,24 @@ const FooterOne = () => {
 
                 
 
+                <div className="col-sm-4 col-lg-6 col-xl-2">
+                    <div className="footer-links fl-3">
+                                        
+                       
+                    
 
+                    </div>	
+                </div>
 
                
-                <div className="col-sm-4 col-lg-6 col-xl-6">
+                <div className="col-sm-4 col-lg-6 col-xl-3">
                     <div className="footer-links fl-3">
                                         
                        
                         <h6 className="s-17 w-700">Usefull Links</h6>
 
                    
-                        <ul className="foo-links clearfix d-flex align-items-center justify-content-between">
+                        <ul className="foo-links clearfix ">
                             <li className='mr-2'><p><a href="/">Features</a></p></li>										
                             <li className='mr-2'><p><a href="/">How it works</a></p></li>
                             <li className='mr-2'><p><a href="/">Sign In</a></p></li>
